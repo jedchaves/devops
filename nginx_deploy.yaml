@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   labels:
     run: nginx
+    app: nginx
+    version: "1.25.0"
   name: nginx
 spec:
   containers:
@@ -24,7 +26,8 @@ metadata:
   name: nginx
 spec:
   ports:
-  - port: 80
+  - name: http
+    port: 80  
     protocol: TCP
     targetPort: 80
     nodePort: 30001
